@@ -1,5 +1,6 @@
 ﻿using NAudio.CoreAudioApi;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Media;
 using System.Net.NetworkInformation;
@@ -10,11 +11,11 @@ namespace HeadphoneNoiseCancel
 {
     public partial class Form1 : Form
     {
-        SoundPlayer myPlayer = new SoundPlayer(Properties.Resources._10);
-        
+        SoundPlayer myPlayer = new SoundPlayer(Properties.Resources._500);        
         DispatcherTimer dtPlaySound = new DispatcherTimer();
         DispatcherTimer dtTimer = new DispatcherTimer();
         int beepIntervall = 10;
+        int masterSoundLevel = 0;
         TimeSpan ts;
 
         public Form1()
@@ -61,9 +62,10 @@ namespace HeadphoneNoiseCancel
 
 
         private void playSound(object sender, EventArgs e)
-        {           
-            myPlayer.PlaySync();
-
+        {
+            Debug.WriteLine($"master sound level: {masterSoundLevel}");
+            
+            if (masterSoundLevel == 0) myPlayer.PlaySync(); 
             resetUI(false, true, beepIntervall);
         }
 
@@ -123,7 +125,8 @@ namespace HeadphoneNoiseCancel
             if (comboBox.SelectedItem != null) { 
                 
                 var device = (MMDevice) comboBox.SelectedItem;
-                progressBar.Value = (int) Math.Round(device.AudioMeterInformation.MasterPeakValue * 100);
+                masterSoundLevel = (int)Math.Round(device.AudioMeterInformation.MasterPeakValue * 100);                
+                progressBar.Value = masterSoundLevel;
 
             }
         }
