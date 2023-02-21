@@ -11,7 +11,7 @@ namespace HeadphoneNoiseCancel
 {
     public partial class Form1 : Form
     {
-        SoundPlayer myPlayer = new SoundPlayer(Properties.Resources._500);        
+        SoundPlayer myPlayer = new SoundPlayer(Properties.Resources._10);        
         DispatcherTimer dtPlaySound = new DispatcherTimer();
         DispatcherTimer dtTimer = new DispatcherTimer();
         int beepIntervall = 10;

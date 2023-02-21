@@ -116,9 +116,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\10.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\500.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="headphones.ico" />
+    <None Include="Resources\10.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
