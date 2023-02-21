@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NAudio.CoreAudioApi;
+using System;
+using System.Linq;
 using System.Media;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
@@ -18,6 +20,10 @@ namespace HeadphoneNoiseCancel
         public Form1()
         {
             InitializeComponent();
+            MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
+            var devices = enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
+            comboBox.Items.AddRange(devices.ToArray());
+
         }
         
         private void resetUI(bool startButton, bool stopButton, int counterTime)
@@ -110,6 +116,16 @@ namespace HeadphoneNoiseCancel
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (comboBox.SelectedItem != null) { 
+                
+                var device = (MMDevice) comboBox.SelectedItem;
+                progressBar.Value = (int) Math.Round(device.AudioMeterInformation.MasterPeakValue * 100);
+
+            }
         }
     }
 }
