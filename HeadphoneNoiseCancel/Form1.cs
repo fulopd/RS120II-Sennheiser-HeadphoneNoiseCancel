@@ -15,16 +15,20 @@ namespace HeadphoneNoiseCancel
         DispatcherTimer dtPlaySound = new DispatcherTimer();
         DispatcherTimer dtTimer = new DispatcherTimer();
         int beepIntervall = 10;
+
+        MMDevice device;
         int masterSoundLevel = 0;
+
         TimeSpan ts;
 
         public Form1()
         {
             InitializeComponent();
-            MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
-            var devices = enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
-            comboBox.Items.AddRange(devices.ToArray());
 
+            MMDeviceEnumerator enumerator = new MMDeviceEnumerator();
+            device = enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);
+            
+            
         }
         
         private void resetUI(bool startButton, bool stopButton, int counterTime)
@@ -122,9 +126,8 @@ namespace HeadphoneNoiseCancel
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (comboBox.SelectedItem != null) { 
-                
-                var device = (MMDevice) comboBox.SelectedItem;
+            if (device != null) {                
+               
                 masterSoundLevel = (int)Math.Round(device.AudioMeterInformation.MasterPeakValue * 100);                
                 progressBar.Value = masterSoundLevel;
 

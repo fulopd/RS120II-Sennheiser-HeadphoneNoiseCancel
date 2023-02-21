@@ -38,7 +38,6 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox = new System.Windows.Forms.ComboBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.contextMenuStrip.SuspendLayout();
@@ -47,7 +46,7 @@
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(41, 71);
+            this.labelTime.Location = new System.Drawing.Point(11, 10);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(13, 13);
             this.labelTime.TabIndex = 0;
@@ -55,9 +54,9 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(12, 97);
+            this.buttonStart.Location = new System.Drawing.Point(0, 27);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(157, 23);
+            this.buttonStart.Size = new System.Drawing.Size(129, 23);
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -65,9 +64,9 @@
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(12, 145);
+            this.buttonStop.Location = new System.Drawing.Point(131, 27);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(157, 23);
+            this.buttonStop.Size = new System.Drawing.Size(129, 23);
             this.buttonStop.TabIndex = 2;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
@@ -111,14 +110,6 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // comboBox
-            // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(13, 13);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(238, 21);
-            this.comboBox.TabIndex = 3;
-            // 
             // timer
             // 
             this.timer.Enabled = true;
@@ -127,18 +118,17 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(13, 206);
+            this.progressBar.Location = new System.Drawing.Point(-1, 55);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(238, 10);
+            this.progressBar.Size = new System.Drawing.Size(265, 10);
             this.progressBar.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 228);
+            this.ClientSize = new System.Drawing.Size(263, 65);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelTime);
@@ -165,7 +155,6 @@
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ProgressBar progressBar;
     }
