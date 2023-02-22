@@ -14,7 +14,7 @@ namespace HeadphoneNoiseCancel
         SoundPlayer myPlayer = new SoundPlayer(Properties.Resources._10);        
         DispatcherTimer dtPlaySound = new DispatcherTimer();
         DispatcherTimer dtTimer = new DispatcherTimer();
-        int beepIntervall = 120;
+        int beepIntervall = 90;
 
         MMDevice device;
         int masterSoundLevel = 0;
