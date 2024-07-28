@@ -59,33 +59,5 @@ namespace HeadphoneNoiseCancel.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _10 {
-            get {
-                return ResourceManager.GetStream("_10", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _500 {
-            get {
-                return ResourceManager.GetStream("_500", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon headphones {
-            get {
-                object obj = ResourceManager.GetObject("headphones", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
     }
 }
