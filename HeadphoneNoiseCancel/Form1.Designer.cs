@@ -40,10 +40,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonAcceptSetting = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelIntervall = new System.Windows.Forms.Label();
+            this.buttonSaveSetting = new System.Windows.Forms.Button();
+            this.labelFrequency = new System.Windows.Forms.Label();
+            this.labelDuration = new System.Windows.Forms.Label();
             this.groupSettings = new System.Windows.Forms.GroupBox();
             this.numericUpDownIntervall = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownFrequency = new System.Windows.Forms.NumericUpDown();
@@ -130,57 +130,57 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(0, 55);
+            this.progressBar.Location = new System.Drawing.Point(1, 54);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(279, 10);
+            this.progressBar.Size = new System.Drawing.Size(267, 10);
             this.progressBar.TabIndex = 4;
             // 
-            // label1
+            // labelIntervall
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Time between repetitions (s):";
+            this.labelIntervall.AutoSize = true;
+            this.labelIntervall.Location = new System.Drawing.Point(21, 32);
+            this.labelIntervall.Name = "labelIntervall";
+            this.labelIntervall.Size = new System.Drawing.Size(142, 13);
+            this.labelIntervall.TabIndex = 6;
+            this.labelIntervall.Text = "Time between repetitions (s):";
             // 
-            // buttonAcceptSetting
+            // buttonSaveSetting
             // 
-            this.buttonAcceptSetting.Location = new System.Drawing.Point(88, 110);
-            this.buttonAcceptSetting.Name = "buttonAcceptSetting";
-            this.buttonAcceptSetting.Size = new System.Drawing.Size(75, 23);
-            this.buttonAcceptSetting.TabIndex = 7;
-            this.buttonAcceptSetting.Text = "Accept";
-            this.buttonAcceptSetting.UseVisualStyleBackColor = true;
-            this.buttonAcceptSetting.Click += new System.EventHandler(this.buttonAcceptSetting_Click);
+            this.buttonSaveSetting.Location = new System.Drawing.Point(88, 110);
+            this.buttonSaveSetting.Name = "buttonSaveSetting";
+            this.buttonSaveSetting.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveSetting.TabIndex = 7;
+            this.buttonSaveSetting.Text = "Save";
+            this.buttonSaveSetting.UseVisualStyleBackColor = true;
+            this.buttonSaveSetting.Click += new System.EventHandler(this.buttonAcceptSetting_Click);
             // 
-            // label2
+            // labelFrequency
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Frequency (Hz):";
+            this.labelFrequency.AutoSize = true;
+            this.labelFrequency.Location = new System.Drawing.Point(21, 58);
+            this.labelFrequency.Name = "labelFrequency";
+            this.labelFrequency.Size = new System.Drawing.Size(82, 13);
+            this.labelFrequency.TabIndex = 6;
+            this.labelFrequency.Text = "Frequency (Hz):";
             // 
-            // label3
+            // labelDuration
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Duration (s):";
+            this.labelDuration.AutoSize = true;
+            this.labelDuration.Location = new System.Drawing.Point(21, 84);
+            this.labelDuration.Name = "labelDuration";
+            this.labelDuration.Size = new System.Drawing.Size(64, 13);
+            this.labelDuration.TabIndex = 6;
+            this.labelDuration.Text = "Duration (s):";
             // 
             // groupSettings
             // 
             this.groupSettings.Controls.Add(this.numericUpDownDuration);
             this.groupSettings.Controls.Add(this.numericUpDownFrequency);
             this.groupSettings.Controls.Add(this.numericUpDownIntervall);
-            this.groupSettings.Controls.Add(this.label3);
-            this.groupSettings.Controls.Add(this.buttonAcceptSetting);
-            this.groupSettings.Controls.Add(this.label2);
-            this.groupSettings.Controls.Add(this.label1);
+            this.groupSettings.Controls.Add(this.labelDuration);
+            this.groupSettings.Controls.Add(this.buttonSaveSetting);
+            this.groupSettings.Controls.Add(this.labelFrequency);
+            this.groupSettings.Controls.Add(this.labelIntervall);
             this.groupSettings.Location = new System.Drawing.Point(6, 70);
             this.groupSettings.Name = "groupSettings";
             this.groupSettings.Size = new System.Drawing.Size(264, 150);
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 225);
+            this.ClientSize = new System.Drawing.Size(276, 226);
             this.Controls.Add(this.groupSettings);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.buttonStop);
@@ -289,10 +289,10 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonAcceptSetting;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelIntervall;
+        private System.Windows.Forms.Button buttonSaveSetting;
+        private System.Windows.Forms.Label labelFrequency;
+        private System.Windows.Forms.Label labelDuration;
         private System.Windows.Forms.GroupBox groupSettings;
         private System.Windows.Forms.NumericUpDown numericUpDownIntervall;
         private System.Windows.Forms.NumericUpDown numericUpDownDuration;

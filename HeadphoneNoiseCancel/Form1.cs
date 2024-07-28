@@ -101,9 +101,14 @@ namespace HeadphoneNoiseCancel
 
         private void playSound(object sender, EventArgs e)
         {
-            Debug.WriteLine($"master sound level: {masterSoundLevel}");
             
-            if (masterSoundLevel == 0) myPlayer.PlaySync(); 
+            Debug.WriteLine($"master sound level: {masterSoundLevel}");
+
+            if (masterSoundLevel == 0) {
+                
+                myPlayer.PlaySync();
+                
+            }
             resetUI(false, true, intervall);
         }
 
