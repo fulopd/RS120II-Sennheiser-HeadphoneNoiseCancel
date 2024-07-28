@@ -40,16 +40,19 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.textIntervall = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAcceptSetting = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textFrequency = new System.Windows.Forms.TextBox();
-            this.textDuration = new System.Windows.Forms.TextBox();
             this.groupSettings = new System.Windows.Forms.GroupBox();
+            this.numericUpDownIntervall = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownFrequency = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDuration = new System.Windows.Forms.NumericUpDown();
             this.contextMenuStrip.SuspendLayout();
             this.groupSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrequency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTime
@@ -132,15 +135,6 @@
             this.progressBar.Size = new System.Drawing.Size(279, 10);
             this.progressBar.TabIndex = 4;
             // 
-            // textIntervall
-            // 
-            this.textIntervall.Location = new System.Drawing.Point(169, 29);
-            this.textIntervall.MaxLength = 3;
-            this.textIntervall.Name = "textIntervall";
-            this.textIntervall.Size = new System.Drawing.Size(42, 20);
-            this.textIntervall.TabIndex = 5;
-            this.textIntervall.Text = "3";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -178,31 +172,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Duration (s):";
             // 
-            // textFrequency
-            // 
-            this.textFrequency.Location = new System.Drawing.Point(169, 55);
-            this.textFrequency.MaxLength = 5;
-            this.textFrequency.Name = "textFrequency";
-            this.textFrequency.Size = new System.Drawing.Size(42, 20);
-            this.textFrequency.TabIndex = 5;
-            this.textFrequency.Text = "3";
-            // 
-            // textDuration
-            // 
-            this.textDuration.Location = new System.Drawing.Point(169, 81);
-            this.textDuration.MaxLength = 3;
-            this.textDuration.Name = "textDuration";
-            this.textDuration.Size = new System.Drawing.Size(42, 20);
-            this.textDuration.TabIndex = 5;
-            this.textDuration.Text = "3";
-            // 
             // groupSettings
             // 
+            this.groupSettings.Controls.Add(this.numericUpDownDuration);
+            this.groupSettings.Controls.Add(this.numericUpDownFrequency);
+            this.groupSettings.Controls.Add(this.numericUpDownIntervall);
             this.groupSettings.Controls.Add(this.label3);
-            this.groupSettings.Controls.Add(this.textIntervall);
             this.groupSettings.Controls.Add(this.buttonAcceptSetting);
-            this.groupSettings.Controls.Add(this.textFrequency);
-            this.groupSettings.Controls.Add(this.textDuration);
             this.groupSettings.Controls.Add(this.label2);
             this.groupSettings.Controls.Add(this.label1);
             this.groupSettings.Location = new System.Drawing.Point(6, 70);
@@ -211,6 +187,67 @@
             this.groupSettings.TabIndex = 8;
             this.groupSettings.TabStop = false;
             this.groupSettings.Text = "Settings";
+            // 
+            // numericUpDownIntervall
+            // 
+            this.numericUpDownIntervall.Location = new System.Drawing.Point(169, 29);
+            this.numericUpDownIntervall.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numericUpDownIntervall.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownIntervall.Name = "numericUpDownIntervall";
+            this.numericUpDownIntervall.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDownIntervall.TabIndex = 8;
+            this.numericUpDownIntervall.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownFrequency
+            // 
+            this.numericUpDownFrequency.Location = new System.Drawing.Point(169, 56);
+            this.numericUpDownFrequency.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numericUpDownFrequency.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownFrequency.Name = "numericUpDownFrequency";
+            this.numericUpDownFrequency.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDownFrequency.TabIndex = 8;
+            this.numericUpDownFrequency.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownDuration
+            // 
+            this.numericUpDownDuration.Location = new System.Drawing.Point(169, 82);
+            this.numericUpDownDuration.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownDuration.Name = "numericUpDownDuration";
+            this.numericUpDownDuration.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDownDuration.TabIndex = 8;
+            this.numericUpDownDuration.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
@@ -232,6 +269,9 @@
             this.contextMenuStrip.ResumeLayout(false);
             this.groupSettings.ResumeLayout(false);
             this.groupSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrequency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,14 +289,14 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.TextBox textIntervall;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAcceptSetting;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textFrequency;
-        private System.Windows.Forms.TextBox textDuration;
         private System.Windows.Forms.GroupBox groupSettings;
+        private System.Windows.Forms.NumericUpDown numericUpDownIntervall;
+        private System.Windows.Forms.NumericUpDown numericUpDownDuration;
+        private System.Windows.Forms.NumericUpDown numericUpDownFrequency;
     }
 }
 

@@ -78,10 +78,10 @@ namespace HeadphoneNoiseCancel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Értékek kiolvasása config file-ból
-            textIntervall.Text = Convert.ToString(intervall);
-            textFrequency.Text = Convert.ToString(frequency);
-            textDuration.Text = Convert.ToString(duration);
+            //Értékek kiolvasása config file-ból            
+            numericUpDownIntervall.Value = intervall;
+            numericUpDownFrequency.Value = frequency;
+            numericUpDownDuration.Value = duration;
 
             dtPlaySound.Interval = TimeSpan.FromSeconds(intervall);
             dtPlaySound.Tick += playSound;
@@ -170,10 +170,10 @@ namespace HeadphoneNoiseCancel
 
         private void buttonAcceptSetting_Click(object sender, EventArgs e)
         {
-            //Értékek kiolvasása TexBox-ból
-            intervall = Convert.ToInt32(textIntervall.Text);
-            frequency = Convert.ToInt32(textFrequency.Text);
-            duration = Convert.ToInt32(textDuration.Text);
+            //Értékek kiolvasása numericUpDown-ból            
+            intervall = Convert.ToInt32(numericUpDownIntervall.Value);
+            frequency = Convert.ToInt32(numericUpDownFrequency.Value);
+            duration = Convert.ToInt32(numericUpDownDuration.Value);
 
             // Érték mentése config file-ba
             configManager.SetValue("intervall", intervall);
