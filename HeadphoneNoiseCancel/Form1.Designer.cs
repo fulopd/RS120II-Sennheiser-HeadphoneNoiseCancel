@@ -45,14 +45,14 @@
             this.labelFrequency = new System.Windows.Forms.Label();
             this.labelDuration = new System.Windows.Forms.Label();
             this.groupSettings = new System.Windows.Forms.GroupBox();
-            this.numericUpDownIntervall = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownFrequency = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownDuration = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownFrequency = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownIntervall = new System.Windows.Forms.NumericUpDown();
             this.contextMenuStrip.SuspendLayout();
             this.groupSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervall)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrequency)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrequency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervall)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTime
@@ -146,7 +146,7 @@
             // 
             // buttonSaveSetting
             // 
-            this.buttonSaveSetting.Location = new System.Drawing.Point(88, 110);
+            this.buttonSaveSetting.Location = new System.Drawing.Point(88, 108);
             this.buttonSaveSetting.Name = "buttonSaveSetting";
             this.buttonSaveSetting.Size = new System.Drawing.Size(75, 23);
             this.buttonSaveSetting.TabIndex = 7;
@@ -188,23 +188,18 @@
             this.groupSettings.TabStop = false;
             this.groupSettings.Text = "Settings";
             // 
-            // numericUpDownIntervall
+            // numericUpDownDuration
             // 
-            this.numericUpDownIntervall.Location = new System.Drawing.Point(169, 29);
-            this.numericUpDownIntervall.Maximum = new decimal(new int[] {
-            180,
+            this.numericUpDownDuration.Location = new System.Drawing.Point(169, 82);
+            this.numericUpDownDuration.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDownIntervall.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownIntervall.Name = "numericUpDownIntervall";
-            this.numericUpDownIntervall.Size = new System.Drawing.Size(58, 20);
-            this.numericUpDownIntervall.TabIndex = 8;
-            this.numericUpDownIntervall.Value = new decimal(new int[] {
+            this.numericUpDownDuration.Name = "numericUpDownDuration";
+            this.numericUpDownDuration.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDownDuration.TabIndex = 8;
+            this.numericUpDownDuration.Value = new decimal(new int[] {
             60,
             0,
             0,
@@ -232,18 +227,23 @@
             0,
             0});
             // 
-            // numericUpDownDuration
+            // numericUpDownIntervall
             // 
-            this.numericUpDownDuration.Location = new System.Drawing.Point(169, 82);
-            this.numericUpDownDuration.Minimum = new decimal(new int[] {
-            1,
+            this.numericUpDownIntervall.Location = new System.Drawing.Point(169, 29);
+            this.numericUpDownIntervall.Maximum = new decimal(new int[] {
+            180,
             0,
             0,
             0});
-            this.numericUpDownDuration.Name = "numericUpDownDuration";
-            this.numericUpDownDuration.Size = new System.Drawing.Size(58, 20);
-            this.numericUpDownDuration.TabIndex = 8;
-            this.numericUpDownDuration.Value = new decimal(new int[] {
+            this.numericUpDownIntervall.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownIntervall.Name = "numericUpDownIntervall";
+            this.numericUpDownIntervall.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDownIntervall.TabIndex = 8;
+            this.numericUpDownIntervall.Value = new decimal(new int[] {
             60,
             0,
             0,
@@ -269,9 +269,9 @@
             this.contextMenuStrip.ResumeLayout(false);
             this.groupSettings.ResumeLayout(false);
             this.groupSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervall)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrequency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrequency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIntervall)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

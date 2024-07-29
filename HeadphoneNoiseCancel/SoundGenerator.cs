@@ -5,38 +5,55 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HeadphoneNoiseCancel
 {
     internal class SoundGenerator
     {
         private int sampleRate;
+        private static string audioDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "audio");
+        private static string filePath = Path.Combine(audioDirectory, "sound.wav");
 
         public SoundGenerator(int sampleRate = 44100)
         {
             this.sampleRate = sampleRate;
         }
 
+        public bool FileExist() {
+
+            if (File.Exists(filePath))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void GenerateAndPlaySound(double frequency, int duration)
         {
             byte[] waveData = GenerateSineWave(frequency, duration, sampleRate);
 
-            string audioDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "audio");
+            
             if (!Directory.Exists(audioDirectory))
             {
                 Directory.CreateDirectory(audioDirectory);
             }
 
-            string filePath = Path.Combine(audioDirectory, "sound.wav");
+            
             File.WriteAllBytes(filePath, waveData);
 
             using (SoundPlayer player = new SoundPlayer(filePath))
             {
-                player.PlaySync();
+                player.Play();
             }
 
             Console.WriteLine($"A hangfájl létrejött és lejátszásra került: {filePath}");
         }
+                
+        
 
         private byte[] GenerateSineWave(double frequency, int duration, int sampleRate)
         {

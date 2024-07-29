@@ -1,0 +1,3 @@
+intervall=60
+frequency=10
+duration=1

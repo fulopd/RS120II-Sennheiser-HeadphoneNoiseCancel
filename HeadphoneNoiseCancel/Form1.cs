@@ -18,7 +18,6 @@ namespace HeadphoneNoiseCancel
         // ConfigManager példány létrehozása
         static ConfigManager configManager = new ConfigManager(configFilePath);
         
-
         //Config fileból értékek kiolvalsása
         int intervall = Convert.ToInt32(configManager.GetValue("intervall"));
         int frequency = Convert.ToInt32(configManager.GetValue("frequency"));
@@ -27,9 +26,6 @@ namespace HeadphoneNoiseCancel
         //Wav generátor létrehozása
         SoundGenerator soundGenerator = new SoundGenerator();
         
-        
-
-
 
         // Relatív elérési útvonal megadása        
         static string relativePath = "audio/sound.wav";        
@@ -78,7 +74,7 @@ namespace HeadphoneNoiseCancel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Értékek kiolvasása config file-ból            
+            //UI elemek értékadása
             numericUpDownIntervall.Value = intervall;
             numericUpDownFrequency.Value = frequency;
             numericUpDownDuration.Value = duration;
@@ -106,7 +102,7 @@ namespace HeadphoneNoiseCancel
 
             if (masterSoundLevel == 0) {
                 
-                myPlayer.PlaySync();
+                myPlayer.Play();
                 
             }
             resetUI(false, true, intervall);
@@ -114,6 +110,9 @@ namespace HeadphoneNoiseCancel
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            //Ellenőrzi, hogy létezik-e a lejátszandi file, és ha nem akkor létrehozza
+            if(!soundGenerator.FileExist()) soundGenerator.GenerateAndPlaySound(frequency, duration);
+
             dtPlaySound.Start();
             dtTimer.Start();
 
@@ -189,8 +188,10 @@ namespace HeadphoneNoiseCancel
             dtPlaySound.Interval = TimeSpan.FromSeconds(intervall);
 
             soundGenerator.GenerateAndPlaySound(frequency, duration);
-
+            
             resetUI(true, false, intervall);
         }
+
+        
     }
 }
